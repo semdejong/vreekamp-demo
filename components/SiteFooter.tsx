@@ -38,10 +38,10 @@ export default function SiteFooter() {
         </div>
         <div className="md:col-span-3">
           <p className="font-display text-sm font-bold tracking-[0.14em] uppercase">Diensten</p>
-          <ul className="mt-3 space-y-2">
+          <ul className="mt-3">
             {services.map((service) => (
               <li key={service.href}>
-                <Link href={service.href} className="underline decoration-1 underline-offset-4">
+                <Link href={service.href} className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">
                   {service.title}
                 </Link>
               </li>
@@ -50,34 +50,34 @@ export default function SiteFooter() {
         </div>
         <div className="md:col-span-2">
           <p className="font-display text-sm font-bold tracking-[0.14em] uppercase">Verder</p>
-          <ul className="mt-3 space-y-2">
+          <ul className="mt-3">
             <li>
-              <Link href="/werk" className="underline decoration-1 underline-offset-4">
+              <Link href="/werk" className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">
                 Werk
               </Link>
             </li>
             <li>
-              <Link href="/over-lennart" className="underline decoration-1 underline-offset-4">
+              <Link href="/over-lennart" className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">
                 Over Lennart
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="underline decoration-1 underline-offset-4">
+              <Link href="/contact" className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/privacy" className="underline decoration-1 underline-offset-4">
+              <Link href="/privacy" className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4">
                 Privacy
               </Link>
             </li>
             <li>
-              <a href={contact.facebook} className="underline decoration-1 underline-offset-4" target="_blank" rel="noopener noreferrer">
+              <a href={contact.facebook} className="inline-flex min-h-11 items-center underline decoration-1 underline-offset-4" target="_blank" rel="noopener noreferrer">
                 {contact.facebookLabel}
               </a>
             </li>
             <li>
-              <a href="https://sleads.nl" className="underline decoration-1 underline-offset-4" target="_blank" rel="noopener noreferrer">
+              <a href="https://sleads.nl" className="inline-flex min-h-11 items-center whitespace-nowrap underline decoration-1 underline-offset-4" target="_blank" rel="noopener noreferrer">
                 Concept door Sleads
               </a>
             </li>

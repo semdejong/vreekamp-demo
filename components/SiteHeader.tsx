@@ -72,7 +72,7 @@ export default function SiteHeader() {
   }, [sheetOpen]);
 
   useEffect(() => {
-    const wide = window.matchMedia("(min-width: 768px)");
+    const wide = window.matchMedia("(min-width: 1024px)");
     const onChange = () => {
       if (wide.matches) setSheetOpen(false);
     };
@@ -80,7 +80,10 @@ export default function SiteHeader() {
     return () => wide.removeEventListener("change", onChange);
   }, []);
 
-  const linkClass = "inline-flex min-h-11 items-center font-display text-base font-bold uppercase tracking-wide";
+  const linkClass = (href?: string) =>
+    `inline-flex min-h-11 items-center font-display text-base font-bold uppercase tracking-wide ${
+      href && pathname === href ? "border-b-4 border-tape" : "border-b-4 border-transparent"
+    }`;
 
   return (
     <header data-section="header" className={`sticky top-0 border-b-2 border-ink bg-background ${sheetOpen ? "z-[80]" : "z-40"}`}>
@@ -95,11 +98,11 @@ export default function SiteHeader() {
           />
         </Link>
 
-        <nav aria-label="Hoofdmenu" className="hidden items-center gap-5 md:flex">
+        <nav aria-label="Hoofdmenu" className="hidden items-center gap-4 lg:flex">
           <div className="relative" ref={menuRef}>
             <button
               type="button"
-              className={linkClass}
+              className={linkClass()}
               aria-expanded={menuOpen}
               aria-controls={menuId}
               aria-haspopup="true"
@@ -118,7 +121,9 @@ export default function SiteHeader() {
                     <li key={service.href}>
                       <Link
                         href={service.href}
-                        className="flex min-h-11 items-center px-4 font-display text-base font-semibold uppercase tracking-wide hover:bg-tape"
+                        className={`flex min-h-11 items-center border-l-4 px-4 font-display text-base font-semibold uppercase tracking-wide hover:bg-tape ${
+                          pathname === service.href ? "border-violet bg-tape" : "border-transparent"
+                        }`}
                         aria-current={pathname === service.href ? "page" : undefined}
                       >
                         {service.title}
@@ -130,7 +135,7 @@ export default function SiteHeader() {
             ) : null}
           </div>
           {nav.map((item) => (
-            <Link key={item.href} href={item.href} className={linkClass} aria-current={pathname === item.href ? "page" : undefined}>
+            <Link key={item.href} href={item.href} className={linkClass(item.href)} aria-current={pathname === item.href ? "page" : undefined}>
               {item.label}
             </Link>
           ))}
@@ -142,13 +147,13 @@ export default function SiteHeader() {
           className="btn btn-call px-3 sm:px-4"
           aria-label={`Bel ${contact.phoneDisplay}`}
         >
-          <span className="sm:hidden">Bel</span>
-          <span className="hidden sm:inline">{contact.phoneDisplay}</span>
+          <span className="lg:hidden">Bel</span>
+          <span className="hidden lg:inline">{contact.phoneDisplay}</span>
         </a>
 
         <button
           type="button"
-          className="inline-flex min-h-12 min-w-12 flex-col items-center justify-center gap-1.5 border-2 border-ink px-3 md:hidden"
+          className="inline-flex min-h-12 min-w-12 flex-col items-center justify-center gap-1.5 border-2 border-ink px-3 lg:hidden"
           aria-expanded={sheetOpen}
           aria-controls={sheetId}
           onClick={() => setSheetOpen(true)}
@@ -182,7 +187,9 @@ export default function SiteHeader() {
                 <li key={service.href} className="border-b-2 border-ink">
                   <Link
                     href={service.href}
-                    className="flex min-h-12 items-center font-display text-2xl font-bold uppercase"
+                    className={`flex min-h-12 items-center border-l-4 pl-3 font-display text-2xl font-bold uppercase ${
+                      pathname === service.href ? "border-violet" : "border-transparent"
+                    }`}
                     aria-current={pathname === service.href ? "page" : undefined}
                     onClick={() => setSheetOpen(false)}
                   >
@@ -196,7 +203,9 @@ export default function SiteHeader() {
                 <li key={item.href} className="border-b-2 border-ink">
                   <Link
                     href={item.href}
-                    className="flex min-h-12 items-center font-display text-2xl font-bold uppercase"
+                    className={`flex min-h-12 items-center border-l-4 pl-3 font-display text-2xl font-bold uppercase ${
+                      pathname === item.href ? "border-violet" : "border-transparent"
+                    }`}
                     aria-current={pathname === item.href ? "page" : undefined}
                     onClick={() => setSheetOpen(false)}
                   >

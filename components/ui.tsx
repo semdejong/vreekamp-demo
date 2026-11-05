@@ -83,14 +83,14 @@ export function PageHero({
         <div className={photo ? "md:col-span-7" : "md:col-span-10"}>
           <p className="max-w-xl text-lg leading-relaxed">{lede}</p>
           {showActions ? (
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
               <a href={contact.phoneTel} data-cta={ctaType(contact.phoneTel)} className="btn btn-call">
                 Bel {contact.phoneDisplay}
               </a>
               <a href={contact.phoneSms} data-cta={ctaType(contact.phoneSms)} className="btn btn-ghost">
                 App Lennart
               </a>
-              <Link href={offerteHref} data-cta="offerte" className="btn btn-ink">
+              <Link href={offerteHref} data-cta="offerte" className="btn btn-ink col-span-2 sm:col-span-1">
                 Offerte aanvragen
               </Link>
             </div>

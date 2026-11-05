@@ -344,6 +344,10 @@ h3 {
     padding-top: 1.6rem;
   }
 
+  .timeline h3 {
+    min-height: 2.5em;
+  }
+
   .timeline-bar {
     display: block;
     position: absolute;

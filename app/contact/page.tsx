@@ -49,14 +49,14 @@ export default function ContactPage() {
               {contact.phoneDisplay}
             </a>
           </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
             <a href={contact.phoneTel} data-cta={ctaType(contact.phoneTel)} className="btn btn-call">
               Bel Lennart
             </a>
             <a href={contact.phoneSms} data-cta={ctaType(contact.phoneSms)} className="btn btn-ghost">
               App Lennart
             </a>
-            <a href={`mailto:${contact.email}`} data-cta="mailen" className="btn btn-ink">
+            <a href={`mailto:${contact.email}`} data-cta="mailen" className="btn btn-ink col-span-2 sm:col-span-1">
               Mail
             </a>
           </div>

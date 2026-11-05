@@ -15,7 +15,7 @@ export default function OverPage() {
   return (
     <main id="inhoud">
       <section data-section="hero" className="border-b-2 border-ink">
-        <div className="mx-auto grid max-w-6xl items-end gap-8 px-5 py-12 md:grid-cols-12 md:py-16">
+        <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 py-12 md:grid-cols-12 md:py-16">
           <div className="md:col-span-7">
             <Tape>Over Lennart</Tape>
             <h1 className="mt-5 text-5xl sm:text-6xl md:text-7xl">Lennart Vreekamp</h1>

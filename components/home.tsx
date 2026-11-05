@@ -11,10 +11,10 @@ export default function HomeContent() {
   return (
     <main id="inhoud">
       <section data-section="hero" className="border-b-2 border-ink">
-        <div className="mx-auto grid max-w-6xl items-start gap-6 px-5 py-6 md:grid-cols-12 md:gap-8 md:py-16">
-          <div className="md:col-span-7">
+        <div className="mx-auto grid max-w-6xl items-start gap-5 px-5 py-5 lg:grid-cols-12 lg:gap-8 lg:py-16">
+          <div className="lg:col-span-7">
             <Tape>Schildersbedrijf in Markelo</Tape>
-            <h1 className="mt-4 text-[2.65rem] leading-[0.86] sm:text-6xl md:mt-5 md:text-[5.4rem]">
+            <h1 className="mt-3 text-[2.35rem] leading-[0.86] sm:text-6xl lg:mt-5 lg:text-[5.4rem]">
               Eén schilder.
               <br />
               Eén nummer.
@@ -22,7 +22,7 @@ export default function HomeContent() {
               Klaar.
             </h1>
           </div>
-          <div className="md:col-span-5 md:row-span-2">
+          <div className="lg:col-span-5 lg:row-span-2">
             <div className="relative pb-3 pr-3">
               <div className="absolute right-0 bottom-0 left-8 top-8 bg-violet" aria-hidden="true" />
               <div className="relative">
@@ -30,14 +30,14 @@ export default function HomeContent() {
                   photo={photos.portrait}
                   priority
                   sizes="(min-width: 768px) 42vw, 100vw"
-                  imageClassName="h-[190px] w-full object-cover object-[72%_center] sm:h-[260px] md:h-auto md:object-contain"
+                  imageClassName="h-[148px] w-full object-cover object-[78%_42%] md:h-auto md:object-contain"
                 />
               </div>
             </div>
           </div>
-          <div className="md:col-span-7">
+          <div className="lg:col-span-7">
             <p className="max-w-xl text-lg leading-relaxed">{content.hero.lede}</p>
-            <div className="mt-8 flex items-stretch gap-4">
+            <div className="mt-5 flex items-stretch gap-4 lg:mt-8">
               <span className="w-3 shrink-0 bg-accent" aria-hidden="true" />
               <div>
                 <a
@@ -50,14 +50,14 @@ export default function HomeContent() {
                 <p className="mt-2 text-base">Maandag t/m vrijdag 08:00–18:00. Zaterdag 08:00–17:00.</p>
               </div>
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:flex sm:flex-wrap">
               <a href={contact.phoneTel} data-cta={ctaType(contact.phoneTel)} className="btn btn-call">
                 Bel Lennart
               </a>
               <a href={contact.phoneSms} data-cta={ctaType(contact.phoneSms)} className="btn btn-ghost">
                 App Lennart
               </a>
-              <a href="#offerte" data-cta="offerte" className="btn btn-ink">
+              <a href="#offerte" data-cta="offerte" className="btn btn-ink col-span-2 sm:col-span-1">
                 Offerte aanvragen
               </a>
             </div>
@@ -83,7 +83,7 @@ export default function HomeContent() {
               <Link key={service.href} href={service.href} className="index-row">
                 <span className="font-display text-2xl font-bold uppercase md:text-3xl">{service.title}</span>
                 <span className="text-base leading-relaxed md:text-lg">{service.short}</span>
-                <span className="font-display text-sm font-bold tracking-[0.14em] uppercase">Open</span>
+                <span className="font-display text-sm font-bold tracking-[0.14em] uppercase">Bekijk</span>
               </Link>
             ))}
           </div>
@@ -94,7 +94,11 @@ export default function HomeContent() {
         <div className="grid items-start gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Tape>Eén huis</Tape>
-            <h2 className="mt-5 text-4xl md:text-6xl">Meerdere klussen, één schilder</h2>
+            <h2 className="mt-5 text-4xl md:text-6xl">
+              Meerdere klussen.
+              <br />
+              Eén schilder.
+            </h2>
             <div className="mt-5 max-w-xl space-y-4 text-lg">
               <p>
                 Een huis vraagt zelden maar één ding. In Borculo schilderde ik de woonkamer en de keuken, en gaf ik de voordeur, het kozijn en het wc-raampje een onderhoudsbeurt. Het houtrot in het kozijn hoorde daarbij.
@@ -157,10 +161,10 @@ export default function HomeContent() {
             </Link>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
-            <PhotoFrame photo={photos.doorRot} stamp="Voor" caption="Houtrot onderin de kozijnstijl." sizes="(min-width: 1024px) 22vw, 50vw" />
-            <PhotoFrame photo={photos.doorSawn} stamp="Uitgezaagd" caption="Rot hout eruit, klaar voor Meranti." sizes="(min-width: 1024px) 22vw, 50vw" />
-            <PhotoFrame photo={photos.kitchenBefore} stamp="Voor" caption="Keukenwand vóór de nieuwe lagen." sizes="(min-width: 1024px) 22vw, 50vw" />
-            <PhotoFrame photo={photos.kitchenAfterSink} stamp="Na" caption="Keuken na twee nieuwe lagen, licht afgewerkt." sizes="(min-width: 1024px) 22vw, 50vw" />
+            <PhotoFrame photo={photos.doorRot} stamp="Voor" caption="Houtrot onderin de kozijnstijl." sizes="(min-width: 1024px) 22vw, 50vw" imageClassName="aspect-[3/4] w-full object-cover object-bottom" />
+            <PhotoFrame photo={photos.doorSawn} stamp="Uitgezaagd" caption="Rot hout eruit, klaar voor Meranti." sizes="(min-width: 1024px) 22vw, 50vw" imageClassName="aspect-[3/4] w-full object-cover object-bottom" />
+            <PhotoFrame photo={photos.kitchenBefore} stamp="Voor" caption="Keukenwand vóór de nieuwe lagen." sizes="(min-width: 1024px) 22vw, 50vw" imageClassName="aspect-[3/4] w-full object-cover" />
+            <PhotoFrame photo={photos.kitchenAfterSink} stamp="Na" caption="Keuken na twee nieuwe lagen, licht afgewerkt." sizes="(min-width: 1024px) 22vw, 50vw" imageClassName="aspect-[3/4] w-full object-cover" />
           </div>
         </div>
         </div>

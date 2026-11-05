@@ -22,6 +22,7 @@ export default function QuoteForm({ variant = "algemeen" }: { variant?: Variant 
   const { contact, services } = content;
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [done, setDone] = useState(false);
+  const [fotoLabel, setFotoLabel] = useState("Geen foto gekozen");
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -148,7 +149,22 @@ export default function QuoteForm({ variant = "algemeen" }: { variant?: Variant 
           Foto, niet verplicht
         </label>
         <p className="mt-1 text-base">De foto wordt niet meegestuurd. Hij blijft op uw apparaat.</p>
-        <input id={`${id}-foto`} name="foto" type="file" accept="image/*" className="mt-3 block w-full text-base" />
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          <label htmlFor={`${id}-foto`} className="btn btn-ghost cursor-pointer">
+            Kies een foto
+          </label>
+          <p className="text-base" aria-live="polite">
+            {fotoLabel}
+          </p>
+        </div>
+        <input
+          id={`${id}-foto`}
+          name="foto"
+          type="file"
+          accept="image/*"
+          className="sr-only"
+          onChange={(event) => setFotoLabel(event.target.files?.[0]?.name || "Geen foto gekozen")}
+        />
       </div>
 
       <div className="border-t border-ink px-5 py-5">
