@@ -86,7 +86,7 @@ export default function WerkPage() {
           </div>
           <div className="md:col-span-7">
             <Ticket
-              kicker="Nog in te vullen"
+              kicker="Uw werkbon"
               rows={[
                 { title: "Schilderwerk", on: false },
                 { title: "Glaswerk", on: false },
