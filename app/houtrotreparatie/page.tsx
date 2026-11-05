@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { photos } from "@/content";
 import QuoteForm from "@/components/QuoteForm";
-import { PageHero, PhotoFrame, Tape } from "@/components/ui";
+import { Faq, PageHero, PhotoFrame, Tape, Ticket } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Houtrotreparatie",
@@ -132,6 +132,49 @@ export default function HoutrotPage() {
         </ol>
       </section>
 
+      <section data-section="materiaal" className="border-t-2 border-ink bg-ink text-background">
+        <div className="on-dark mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-12 md:py-20">
+          <div className="md:col-span-5">
+            <Tape>Op de bon in Borculo</Tape>
+            <h2 className="mt-5 text-4xl text-background md:text-5xl">Meranti en epoxy</h2>
+            <p className="mt-4 text-lg">
+              Dit is wat er in dat kozijn is gegaan. Geen verflaag over zacht hout. Eerst het hout, dan de afwerking, dan het schilderwerk van deur, kozijn en wc-raampje.
+            </p>
+          </div>
+          <div className="md:col-span-7">
+            <Ticket
+              kicker="Materiaal"
+              place="Borculo"
+              date="maart 2017"
+              rows={[
+                { title: "Meranti hardhout", text: "Deelvervanging: de gaten opgevuld met hardhout op de plek van het rotte deel.", on: true },
+                { title: "2-componenten epoxy", text: "Houtrotvulmiddel om het herstel af te werken, zodat het kozijn weer jaren mee kan.", on: true },
+                { title: "Verf", text: "Pas toen het hout in orde was. Samen met de voordeur en het wc-raampje.", on: true },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section data-section="waar" className="mx-auto max-w-6xl px-5 py-14 md:py-16">
+        <h2 className="max-w-3xl text-4xl md:text-5xl">Waar ik het tegenkom</h2>
+        <p className="mt-4 max-w-2xl">
+          Houtrot is een veelvoorkomend probleem bij houten ondergronden. Vaak zit het waar water blijft staan. Of dat bij u zo is, zeg ik pas als ik het heb gezien.
+        </p>
+        <ul className="mt-8 border-t-2 border-ink">
+          {[
+            ["Kozijn", "Onderaan de stijl en in de hoeken, waar de verf soms al bladdert."],
+            ["Deur", "De onderkant en de onderdorpel, die nat blijven na regen."],
+            ["Dakkapel", "Hout dat langs het dak nat wordt. Zit het daar, zet dat dan op de werkbon."],
+          ].map(([title, text]) => (
+            <li key={title} className="grid gap-2 border-b-2 border-ink py-5 md:grid-cols-12">
+              <h3 className="text-2xl md:col-span-4">{title}</h3>
+              <p className="md:col-span-8">{text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
       <section data-section="tips" className="border-y-2 border-ink bg-muted">
         <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
           <Tape>Tot ik langskom</Tape>
@@ -149,19 +192,7 @@ export default function HoutrotPage() {
 
       <section data-section="faq" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
         <h2 className="text-4xl md:text-6xl">Vragen</h2>
-        <div className="mt-8 border-t-2 border-ink">
-          {faqs.map((item) => (
-            <details key={item.q} className="border-b-2 border-ink">
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-xl font-bold uppercase [&::-webkit-details-marker]:hidden">
-                {item.q}
-                <span aria-hidden="true" className="font-sans text-2xl font-normal normal-case">
-                  +
-                </span>
-              </summary>
-              <p className="max-w-3xl pb-5">{item.a}</p>
-            </details>
-          ))}
-        </div>
+        <Faq items={faqs} />
       </section>
 
       <section id="offerte" data-section="offerte" className="scroll-mt-28 border-t-2 border-ink">

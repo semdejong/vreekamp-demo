@@ -18,6 +18,15 @@ export default function NotFound() {
           Naar de homepage
         </Link>
       </div>
+      <ul className="mt-12 max-w-xl border-t-2 border-ink">
+        {content.services.map((service) => (
+          <li key={service.href} className="border-b-2 border-ink">
+            <Link href={service.href} className="flex min-h-12 items-center font-display text-xl font-bold uppercase">
+              {service.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

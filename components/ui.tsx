@@ -168,6 +168,40 @@ export function Ticket({
   );
 }
 
+export function Ruled({ items }: { items: readonly { title: string; text: string }[] }) {
+  return (
+    <ul className="mt-8 border-t-2 border-ink">
+      {items.map((item) => (
+        <li key={item.title} className="grid gap-2 border-b-2 border-ink py-5 md:grid-cols-12">
+          <h3 className="text-2xl md:col-span-4">{item.title}</h3>
+          <p className="md:col-span-8">{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function Faq({ items }: { items: readonly { q: string; a: string }[] }) {
+  return (
+    <div className="mt-8 border-t-2 border-ink">
+      {items.map((item) => (
+        <details key={item.q} className="group border-b-2 border-ink">
+          <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-xl font-bold uppercase [&::-webkit-details-marker]:hidden">
+            {item.q}
+            <span aria-hidden="true" className="font-sans text-2xl font-normal normal-case group-open:hidden">
+              +
+            </span>
+            <span aria-hidden="true" className="hidden font-sans text-2xl font-normal normal-case group-open:inline">
+              –
+            </span>
+          </summary>
+          <p className="max-w-3xl pb-5">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 export function HoursTicket() {
   return (
     <div className="ticket">

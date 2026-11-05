@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { content } from "@/content";
 import { ctaType } from "@/lib/cta";
-import { Tape } from "@/components/ui";
+import { Tape, Ticket } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Privacy",
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       <h1 className="mt-5 text-5xl md:text-6xl">Privacy</h1>
       <div data-section="privacy" className="mt-8 space-y-4">
         <p>
-          Deze tekst hoort bij de conceptsite van {company.name}, {contact.address}. Contact:{" "}
+          Deze tekst hoort bij de conceptsite van {company.name}, {contact.address}. U spreekt {company.person}. Contact:{" "}
           <a href={`mailto:${contact.email}`} data-cta="mailen" className="underline underline-offset-4">
             {contact.email}
           </a>{" "}
@@ -30,20 +30,29 @@ export default function PrivacyPage() {
         <p>
           Het offerteformulier op deze site is een demonstratie. Wat u invult, wordt niet verzonden en niet opgeslagen. Een foto die u kiest, blijft op uw apparaat.
         </p>
-        <p>Belt of mailt u mij, dan gebruik ik uw naam en uw telefoonnummer of e-mailadres om u te antwoorden.</p>
-        <p>
-          De site zet geen volgcookies. Er draait een cookieloos script van Sleads om te zien of deze demo bekeken wordt. Concept door{" "}
-          <a href="https://sleads.nl" className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
-            Sleads
-          </a>
-          .
-        </p>
-        <p>
-          <Link href="/contact" className="underline underline-offset-4">
-            Naar contact
-          </Link>
-        </p>
       </div>
+
+      <div className="mt-10" data-section="bewaren">
+        <Ticket
+          kicker="Deze conceptsite"
+          rows={[
+            { title: "Formulier verstuurt niets", text: "Naam, telefoon, plaats, soort klus, binnen of buiten, toelichting en een optionele foto blijven in uw browser.", on: true },
+            { title: "Bellen en mailen", text: "Belt of mailt u mij, dan gebruik ik uw naam en uw telefoonnummer of e-mailadres om u te antwoorden.", on: true },
+            { title: "Geen volgcookies", text: "Er draait een cookieloos script van Sleads om te zien of deze demo bekeken wordt.", on: true },
+          ]}
+        />
+      </div>
+
+      <p className="mt-8">
+        Concept door{" "}
+        <a href="https://sleads.nl" className="underline underline-offset-4" target="_blank" rel="noopener noreferrer">
+          Sleads
+        </a>
+        .{" "}
+        <Link href="/contact" className="underline underline-offset-4">
+          Naar contact
+        </Link>
+      </p>
     </main>
   );
 }

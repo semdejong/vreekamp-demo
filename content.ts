@@ -112,7 +112,7 @@ export const content = {
   steps: [
     {
       title: "Bellen of appen",
-      text: "U belt of appt 06 44 99 37 84. Ik neem zelf op. Geen planner ertussen.",
+      text: "U belt of appt mij. Ik neem zelf op. Geen planner ertussen.",
     },
     {
       title: "Langskomen en bekijken",

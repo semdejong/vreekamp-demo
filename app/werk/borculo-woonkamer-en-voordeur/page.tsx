@@ -49,6 +49,9 @@ export default function BorculoPage() {
             <p>
               De wanden en plafonds zijn voorzien van twee nieuwe lagen verf. Op één wand is een warme grijs/bruine tint aangebracht, zodat de woonkamer spreekt. Die kleur is terug te zien in de keuken en geeft contrast met het overige, licht gemaakte schilderwerk. Het eindresultaat is fris.
             </p>
+            <p>
+              Eerst de kamer vóór het werk, dan de keuken na afloop. Het kozijn daarna laat het herstel in het werk zien: rot, uitgezaagd, afgeplakt. De woonkamer en de keuken laten het schilderwerk na afloop zien.
+            </p>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <PhotoFrame photo={photos.livingBefore} stamp="Voor" caption="Woonkamer vóór het schilderwerk." />
@@ -57,7 +60,8 @@ export default function BorculoPage() {
             <PhotoFrame photo={photos.kitchenAfter} stamp="Na" caption="Keuken na het schilderwerk." />
             <PhotoFrame photo={photos.kitchenBeforeGrey} stamp="Voor" caption="Wand boven het aanrecht, vóór de nieuwe laag." />
             <PhotoFrame photo={photos.kitchenAfterSink} stamp="Na" caption="Aanrechtzijde na het schilderwerk." />
-            <PhotoFrame photo={photos.kitchenAfterWindow} stamp="Na" caption="Raamzijde van de keuken." />
+            <PhotoFrame photo={photos.kitchenAfterWindow} stamp="Na" caption="Raamzijde van de keuken, na het schilderwerk." />
+            <PhotoFrame photo={photos.kitchenAfterHob} stamp="Na" caption="Fornuiszijde, licht afgewerkt." />
             <PhotoFrame photo={photos.kitchenAfterDoor} stamp="Na" caption="Binnendeur en keukenwand afgewerkt." />
           </div>
         </div>
@@ -69,6 +73,10 @@ export default function BorculoPage() {
         <p className="mt-5 max-w-2xl text-lg">
           In een groot deel van het kozijn was houtrot ingetreden. Dat is opgelost door de rotte delen uit te zagen en te frezen, de gaten op te vullen met Meranti hardhout en af te werken met een 2-componenten epoxy houtrotvulmiddel.
         </p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <PhotoFrame photo={photos.doorSill} stamp="Onderdorpel" caption="Schade langs de onderkant van deur en kozijn, vóór het herstel." />
+          <PhotoFrame photo={photos.doorBottom} stamp="Onderzijde" caption="Onderzijde van de groene voordeur en het witte kozijn." />
+        </div>
         <ol className="mt-8 grid gap-6 md:grid-cols-3">
           <li>
             <PhotoFrame photo={photos.doorRot} stamp="Voor" caption="Rot hout onderin de stijl." />

@@ -415,6 +415,93 @@ h3 {
   }
 }
 
+.layer-stack {
+  border: 2px solid #24242a;
+}
+
+.layer-stack p {
+  margin: 0;
+  padding: 1.15rem 1.1rem;
+  border-bottom: 2px solid #24242a;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.layer-stack p:last-child {
+  border-bottom: 0;
+}
+
+.staal {
+  display: grid;
+  border: 2px solid #24242a;
+}
+
+.staal-row {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 11rem) 1fr;
+  min-height: 4.5rem;
+  border-bottom: 2px solid #24242a;
+}
+
+.staal-row:last-child {
+  border-bottom: 0;
+}
+
+.staal-name {
+  display: flex;
+  align-items: flex-end;
+  padding: 0.75rem;
+  background: #f1eee8;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.staal-field {
+  min-height: 4.5rem;
+}
+
+.patroon-field {
+  background-color: #efe2a8;
+  background-image: repeating-linear-gradient(90deg, #5b2a86 0 16px, #efe2a8 16px 32px);
+}
+
+.weefsel-field {
+  background-color: #e4dfd6;
+  background-image: repeating-linear-gradient(#24242a 0 1px, transparent 1px 8px);
+}
+
+.meetbon {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.35rem 1rem;
+  border-top: 2px solid #24242a;
+}
+
+.meetbon div {
+  display: contents;
+}
+
+.meetbon dt {
+  padding: 0.85rem 0;
+  border-bottom: 2px solid #24242a;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.meetbon dd {
+  margin: 0;
+  padding: 0.85rem 0;
+  border-bottom: 2px solid #24242a;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

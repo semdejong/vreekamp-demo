@@ -90,7 +90,37 @@ export default function HomeContent() {
         </div>
       </section>
 
-      <section data-section="werk-borculo" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+      <section data-section="een-huis" className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+        <div className="grid items-start gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <Tape>Eén huis</Tape>
+            <h2 className="mt-5 text-4xl md:text-6xl">Meerdere klussen, één schilder</h2>
+            <div className="mt-5 max-w-xl space-y-4 text-lg">
+              <p>
+                Een huis vraagt zelden maar één ding. In Borculo schilderde ik de woonkamer en de keuken, en gaf ik de voordeur, het kozijn en het wc-raampje een onderhoudsbeurt. Het houtrot in het kozijn hoorde daarbij.
+              </p>
+              <p>
+                In Markelo kitte ik de tegels en het sanitair. Glas, behang en kleuradvies doe ik zelf, als uw huis dat ook nodig heeft. U belt één nummer.
+              </p>
+            </div>
+          </div>
+          <div className="lg:col-span-7">
+            <Ticket
+              kicker="Kan op dezelfde bon"
+              rows={[
+                { title: "Schilderwerk binnen en buiten", text: "Wanden, plafonds, deuren, kozijnen en ramen.", on: true },
+                { title: "Houtrot", text: "Eerst de oorzaak, daarna het hout. Pas dan de verf.", on: true },
+                { title: "Glas", text: "Nieuw of vervangen, enkel of isolerend, als de ruit dat vraagt.", on: true },
+                { title: "Kit", text: "Badkamer, wc, vloer of rond het glas.", on: true },
+                { title: "Behang of een kleur", text: "De wand afwerken, of eerst bepalen wat het huis moet zeggen.", on: true },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section data-section="werk-borculo" className="border-t-2 border-ink">
+        <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
         <Tape>Borculo</Tape>
         <h2 className="mt-5 max-w-4xl text-4xl md:text-6xl">Woonkamer, keuken en een kozijn</h2>
         <p className="mt-5 max-w-3xl text-lg">
@@ -133,6 +163,7 @@ export default function HomeContent() {
             <PhotoFrame photo={photos.kitchenAfterSink} stamp="Na" caption="Keuken na twee nieuwe lagen, licht afgewerkt." sizes="(min-width: 1024px) 22vw, 50vw" />
           </div>
         </div>
+        </div>
       </section>
 
       <section data-section="werk-markelo" className="border-y-2 border-ink">
@@ -169,6 +200,21 @@ export default function HomeContent() {
                 <p className="mt-2 text-base leading-relaxed text-background">{step.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section data-section="zaterdag" className="border-y-2 border-ink bg-tape text-ink">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 md:flex-row md:items-end md:justify-between md:py-12">
+          <div>
+            <p className="font-display text-sm font-bold tracking-[0.16em] uppercase">Ook op zaterdag</p>
+            <p className="mt-2 font-display text-5xl font-bold uppercase leading-[0.9] md:text-7xl">08:00–17:00</p>
+          </div>
+          <div className="max-w-md">
+            <p className="text-lg">Maandag tot en met vrijdag tot 18:00. Zaterdag ben ik er tot 17:00. U belt, ik neem zelf op.</p>
+            <a href={contact.phoneTel} data-cta={ctaType(contact.phoneTel)} className="btn btn-call mt-5">
+              Bel {contact.phoneDisplay}
+            </a>
           </div>
         </div>
       </section>
